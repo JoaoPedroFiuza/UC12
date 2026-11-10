@@ -1,0 +1,525 @@
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f8fb;
+    color: #262626;
+    font-size: 14px;
+}
+
+/* BARRA LATERAL */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #eef4f8;
+    border-right: 1px solid #dce3e8;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 16px;
+}
+
+.logo {
+    font-size: 20px;
+    margin-bottom: 48px;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile > img {
+    width: 76px;
+    height: 76px;
+    border: 2px solid #ed3154;
+    outline: 2px solid #ff8a32;
+    border-radius: 50%;
+    padding: 3px;
+    object-fit: cover;
+}
+
+.profile h3 {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.profile p {
+    color: #888;
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.profile-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-stats strong {
+    font-size: 14px;
+}
+
+.profile-stats span,
+.suggestion span {
+    color: #888;
+    font-size: 11px;
+}
+
+.suggestion-title {
+    display: flex;
+    justify-content: space-between;
+    color: #f28b00;
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+
+.suggestion-title a {
+    color: #888;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.suggestion {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px;
+    min-width: 0;
+}
+
+.suggestion img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.suggestion div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.suggestion div strong,
+.suggestion div span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.suggestion div strong {
+    font-size: 12px;
+}
+
+.suggestion > a {
+    color: #1685ed;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.sidebar-bottom {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sidebar-bottom a {
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+    width: calc(100% - 220px);
+    min-height: 100vh;
+    margin-left: 220px;
+    padding: 0 26px 32px;
+}
+
+.topbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.topbar input {
+    width: 180px;
+    padding: 10px;
+    border: 1px solid #d9dfe3;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 12px;
+}
+
+.main-nav,
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.main-nav a,
+.top-actions a {
+    color: #222;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.main-nav a:first-child {
+    color: #111;
+    border-bottom: 3px solid #e73550;
+}
+
+.top-actions {
+    margin-left: auto;
+}
+
+.top-actions button {
+    border: none;
+    background: linear-gradient(90deg, #ffb000, #e00082);
+    color: white;
+    padding: 9px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* STORIES */
+.stories {
+    height: 82px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #d9dfe3;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 16px;
+    margin: 10px 0 13px;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+}
+
+.story img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid #f0444e;
+    object-fit: cover;
+}
+
+/* PUBLICAÇÕES */
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.post {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(270px, 1fr);
+    width: 100%;
+    min-height: 450px;
+    background-color: white;
+    border: 1px solid #d9dfe3;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.post-image {
+    min-height: 450px;
+    background-color: #e9e2dc;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    display: block;
+    object-fit: cover;
+}
+
+.post-details {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.post-header {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.post-header img,
+.comment img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-header div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 12px;
+}
+
+.post-header div span {
+    color: #999;
+    font-size: 11px;
+}
+
+.dots {
+    margin-left: auto;
+    font-size: 15px;
+}
+
+.comments {
+    padding: 12px;
+    flex: 1;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 14px;
+    font-size: 12px;
+}
+
+.comment img {
+    flex-shrink: 0;
+}
+
+.comment p {
+    line-height: 1.5;
+    flex: 1;
+}
+
+.comment p strong {
+    font-size: 12px;
+}
+
+.comment span {
+    color: #999;
+    font-size: 13px;
+}
+
+.post-reactions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px 6px;
+    border-top: 1px solid #eee;
+    font-size: 19px;
+}
+
+.post-reactions div {
+    display: flex;
+    gap: 12px;
+}
+
+.likes {
+    padding: 4px 12px;
+    font-size: 12px;
+}
+
+.post-date {
+    padding: 6px 12px;
+    color: #999;
+    font-size: 10px;
+}
+
+.add-comment {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 12px;
+    border-top: 1px solid #eee;
+}
+
+.add-comment > span {
+    font-size: 17px;
+}
+
+.add-comment input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 11px;
+}
+
+.add-comment button {
+    color: #58a5ed;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.second-post .post-image img {
+    object-position: center;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 180px;
+        padding: 13px;
+    }
+
+    .main-content {
+        width: calc(100% - 180px);
+        margin-left: 180px;
+        padding: 0 16px 25px;
+    }
+
+    .post {
+        grid-template-columns: 1fr;
+    }
+
+    .post-image,
+    .post-image img {
+        min-height: 320px;
+        max-height: 440px;
+    }
+
+    .comments {
+        min-height: 120px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 10px 20px;
+    }
+
+    .topbar {
+        height: 60px;
+        gap: 9px;
+    }
+
+    .topbar input {
+        width: 100%;
+        max-width: 125px;
+        padding: 8px;
+    }
+
+    .main-nav {
+        gap: 9px;
+    }
+
+    .main-nav a {
+        font-size: 18px;
+    }
+
+    .top-actions {
+        gap: 9px;
+    }
+
+    .top-actions a {
+        font-size: 18px;
+    }
+
+    .top-actions button {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .stories {
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 18px;
+        height: 82px;
+    }
+
+    .story {
+        flex-shrink: 0;
+    }
+
+    .post {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .post-image,
+    .post-image img {
+        width: 100%;
+        min-height: 280px;
+        max-height: 420px;
+    }
+
+    .post-details {
+        min-height: 250px;
+    }
+
+    .comments {
+        min-height: 110px;
+    }
+}
+
+/* TELAS MUITO PEQUENAS */
+@media (max-width: 380px) {
+    .topbar {
+        gap: 6px;
+    }
+
+    .topbar input {
+        max-width: 100px;
+    }
+
+    .main-nav {
+        gap: 7px;
+    }
+
+    .top-actions {
+        gap: 7px;
+    }
+
+    .top-actions button {
+        font-size: 9px;
+        padding: 7px 5px;
+    }
+}
